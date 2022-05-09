@@ -1,0 +1,17 @@
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    tty: true
+    working_dir: /app/src
+    volumes:
+      - .:/app/src
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=P@ssw0rd
+  cli:
+    build: ./
+    tty: true
+    working_dir: /app/src
+    volumes:
+      - .:/app/src

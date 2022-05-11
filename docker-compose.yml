@@ -6,6 +6,9 @@ services:
     working_dir: /app/src
     volumes:
       - .:/app/src
+      - ./mssql/data:/var/opt/mssql/data
+      - ./mssql/log:/var/opt/mssql/log
+      - ./mssql/secrets:/var/opt/mssql/secrets
     environment:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=P@ssw0rd
